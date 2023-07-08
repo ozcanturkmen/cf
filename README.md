@@ -1,2 +1,3 @@
 # cf
-Fullstack app template built using Cloudflare Pages and Workers
+
+Fullstack React app template for Cloudflare Pages with Cloudflare Workers by Özcan Türkmen.
