@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/require-await
 export const onRequestGet: PagesFunction = async () => {
   const data = {
     hello: "world",
