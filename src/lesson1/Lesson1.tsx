@@ -7,21 +7,20 @@ type data = {
   [key: string]: string | object;
 };
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const [post, setPost] = useState("");
-// eslint-disable-next-line react-hooks/rules-of-hooks
-useEffect(() => {
-  fetch("https://jsonplaceholder.typicode.com/users/1")
-    .then((response) => response.json())
-    .then((data: data) => {
-      setPost(data.email);
-    })
-    .catch((err) => {
-      console.log((err as Error).message);
-    });
-}, []);
+const Lesson1 = () => {
+  const [post, setPost] = useState("*");
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users/1")
+      .then((response) => response.json())
+      .then((data: data) => {
+        console.log(data.email);
+        setPost(data.email);
+      })
+      .catch((err) => {
+        console.log((err as Error).message);
+      });
+  }, []);
 
-export default function Lesson1() {
   return (
     <>
       <Gallery />
@@ -31,4 +30,6 @@ export default function Lesson1() {
       </div>
     </>
   );
-}
+};
+
+export default Lesson1;
