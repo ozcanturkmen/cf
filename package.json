@@ -1,36 +1,40 @@
 {
-  "name": "cf",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "copy-routes": "cp _routes.json ./dist",
-    "build": "tsc && vite build && npm run copy-routes",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "local": "npx wrangler pages dev dist"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230628.0",
-    "@types/itty-router-extras": "^0.4.0",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "@vitejs/plugin-react": "^4.0.1",
-    "eslint": "^8.44.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.1",
-    "itty-cors": "^0.3.6",
-    "itty-router": "^4.0.14",
-    "itty-router-extras": "^0.4.5",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.0"
-  }
+    "name": "cf",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "copy-routes": "cp routes.json ./dist/_routes.json",
+        "build": "tsc && vite build && npm run copy-routes",
+        "lint": "eslint src --ignore-path .eslintignore --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "format-check": "prettier . --check",
+        "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json|css|html)\"",
+        "preview": "vite preview",
+        "local": "npx wrangler pages dev dist"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.14.1"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20230628.0",
+        "@types/itty-router-extras": "^0.4.0",
+        "@types/react": "^18.2.14",
+        "@types/react-dom": "^18.2.6",
+        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "@typescript-eslint/parser": "^5.61.0",
+        "@vitejs/plugin-react": "^4.0.1",
+        "eslint": "^8.44.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.1",
+        "itty-cors": "^0.3.6",
+        "itty-router": "^4.0.14",
+        "itty-router-extras": "^0.4.5",
+        "prettier": "^3.0.0",
+        "typescript": "^5.1.6",
+        "vite": "^4.4.0"
+    }
 }
