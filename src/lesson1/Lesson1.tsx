@@ -2,15 +2,19 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Gallery from "./Gallery";
 
+type data = {
+  email: string;
+  [key: string]: string | object;
+};
+
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const [post, setPost] = useState("");
 // eslint-disable-next-line react-hooks/rules-of-hooks
 useEffect(() => {
-  fetch("https://cf-ej5.pages.dev/api/todos")
+  fetch("https://jsonplaceholder.typicode.com/users/1")
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      setPost(data as string);
+    .then((data: data) => {
+      setPost(data.email);
     })
     .catch((err) => {
       console.log((err as Error).message);
