@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import Gallery from "./Gallery";
 
 type data = {
-  email: string;
+  hello: string;
   [key: string]: string | object;
 };
 
 const Lesson1 = () => {
   const [post, setPost] = useState("*");
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/1")
+    fetch("https://cf-ej5.pages.dev/api/posts")
       .then((response) => response.json())
       .then((data: data) => {
-        console.log(data.email);
-        setPost(data.email);
+        console.log(data.hello);
+        setPost("hello " + data.hello);
       })
       .catch((err) => {
         console.log((err as Error).message);

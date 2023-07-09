@@ -4,6 +4,5 @@
     "module": "esnext",
     "lib": ["esnext"],
     "types": ["@cloudflare/workers-types"]
-  },
-  "include": ["workers/**/*", "_worker.ts"]
+  }
 }
